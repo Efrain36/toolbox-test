@@ -1,0 +1,12 @@
+version: '3'
+services:
+  react-app:
+    build:
+      context: ./toolbox-client
+    ports:
+      - '3002:3002'
+  express-app:
+    build:
+      context: ./toolbox-api
+    ports:
+      - '8081:8081'
