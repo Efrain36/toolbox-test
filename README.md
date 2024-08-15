@@ -8,7 +8,21 @@ Antes de comenzar, debes tener instalado:
 
 - Docker
 
-## Primeros pasos
+## Ejecución de ambos componentes en simultaneo
+
+Para ejecutar tanto el cliente como el backend juntos utilizando Docker, sigue estos pasos:
+
+1. En la raíz del proyecto (donde se encuentra tu archivo `docker-compose.yml`), ejecuta:
+
+    ```bash
+    docker-compose up -d
+    ```
+
+    Esto iniciará los contenedores del cliente y el backend.
+
+2. Accede al cliente en http://localhost:3002 y al backend en http://localhost:8081.
+
+## Ejecución de los componentes por separado
 
 1. **Cliente (toolbox-client)**
 
@@ -58,18 +72,6 @@ Antes de comenzar, debes tener instalado:
 
     El backend estará disponible en http://localhost:8081.
     Puedes acceder al swagger en http://localhost:8081/api-docs
-
-## Ejecución de ambos componentes en simultaneo
-
-Para ejecutar tanto el cliente como el backend juntos utilizando Docker, sigue estos pasos:
-
-1. En la raíz del proyecto (donde se encuentra tu archivo `docker-compose.yml`), ejecuta:
-
-    ```bash
-    docker-compose up -d
-    ```
-
-    Esto iniciará los contenedores del cliente y el backend en modo desacoplado.
     
 ## Ejecución de test
 
@@ -81,6 +83,12 @@ Para ejecutar las pruebas en cada componente, sigue estos pasos:
 
         ```bash
         cd toolbox-client
+        ```
+
+    - Instala las dependencias:
+
+        ```bash
+        npm install
         ```
 
     - Ejecuta las pruebas:
@@ -96,10 +104,14 @@ Para ejecutar las pruebas en cada componente, sigue estos pasos:
         ```bash
         cd toolbox-api
         ```
+    - Instala las dependencias:
+
+        ```bash
+        npm install
+        ```
 
     - Ejecuta las pruebas:
 
         ```bash
         npm run test    
 
-2. Accede al cliente en http://localhost:3002 y al backend en http://localhost:8081.
