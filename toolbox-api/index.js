@@ -4,7 +4,7 @@ const swagger = require('./src/config/swagger/swagger')
 const router = require('./src/router/index.router')
 
 const app = express()
-const port = process.env.PORT || 8082
+const port = process.env.PORT || 8081
 
 app.use(cors())
 app.use(express.json())
